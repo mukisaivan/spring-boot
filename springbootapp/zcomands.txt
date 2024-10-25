@@ -1,0 +1,29 @@
+mvnw clean, mvnw compile, mvnw test, mvnw verify
+
+--- to create a jar file 
+mvnw package
+
+---- running app
+mvnw clean
+mvnw package
+java -jar C:\Users\IVAN\Desktop\projects\spring_boot_application\backend\springbootapp\target\springbootapp-0.0.1-SNAPSHOT.jar
+
+
+mvnw spring-boot:run
+
+
+----- switch postgres databases
+ \c employeedb;
+
+ 
+
+------ see all tables
+ \dt, \dt+;
+
+
+----- see table structure/fields
+ \d employeetable;
+
+
+------ see table contents
+ SELECT * from employeetable;
