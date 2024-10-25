@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { EmployeeType } from "../types/EmployeeType"
 
-function App() {
+export default function CreateAndReadComponent() {
   const [employees, setEmployees] = useState<EmployeeType[]>([])
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -79,10 +79,10 @@ function App() {
       <h2>Employee List</h2>
       <div>
         {employees.map((employee) => (
-          <div>
+          <div key={employee.id}>
             <li
               key={employee.id}
-              className=" flex justify-between bg-red-300 m-2 rounded-full relative p-2"
+              className=" flex justify-between bg-red-300 m-2 rounded-full relative p-2 hover:bg-red-600 duration-500 transform cursor-pointer"
             >
               <div className=" w-[1/2]">
                 {employee.firstName} {employee.lastName} -{" "}
@@ -101,5 +101,3 @@ function App() {
     </div>
   )
 }
-
-export default App

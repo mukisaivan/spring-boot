@@ -1,9 +1,9 @@
-import App from "@/app/components/CreateAndReadComponent"
+import CreateAndReadComponent from "@/app/components/CreateAndReadComponent"
 
 export default function Home() {
   return (
-    <div>
-      <App />
+    <div className="">
+      <CreateAndReadComponent />
     </div>
   )
 }
