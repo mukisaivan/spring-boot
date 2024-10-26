@@ -28,16 +28,18 @@ export default function CreateAndReadComponent() {
 
   const addEmployee = async () => {
     try {
-      if (firstName != null || lastName != null || dateOfBirth != null) {
+      if (firstName.trim() && lastName.trim() && dateOfBirth.trim()) {
         const newEmployee = { firstName, lastName, dateOfBirth }
         await axios.post("http://localhost:5000/employees", newEmployee)
+
+        fetchEmployees()
+
+        setFirstName("")
+        setLastName("")
+        setDateOfBirth("")
       } else {
-        alert("fill all fields")
+        alert("Please fill out all fields before submitting.")
       }
-      fetchEmployees() // Refresh the list after adding a new employee
-      setFirstName("")
-      setLastName("")
-      setDateOfBirth("")
     } catch (error) {
       console.error("Error adding employee:", error)
     }
